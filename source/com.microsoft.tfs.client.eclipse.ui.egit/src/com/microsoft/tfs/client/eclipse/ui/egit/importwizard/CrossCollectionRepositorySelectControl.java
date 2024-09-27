@@ -242,18 +242,8 @@ public class CrossCollectionRepositorySelectControl extends BaseControl {
 
         // Since EGit 4.1 default repository root directory preference is hosted
         // in the Core plugin.
-        RepositoryUtil repoUtil;
-        try {
-            repoUtil = org.eclipse.egit.core.Activator.getDefault().getRepositoryUtil();
-        } catch (final NoSuchMethodError error) {
-            try { // RepositoryUtil changed to singleton class and later an enum
-                java.lang.reflect.Field ref = RepositoryUtil.class.getField("INSTANCE"); //$NON-NLS-1$
-                if (java.lang.reflect.Modifier.isPrivate(ref.getModifiers())) ref.setAccessible(true);
-                repoUtil = (RepositoryUtil) ref.get(null);
-            } catch (final Exception exception) {
-                throw new RuntimeException(exception);
-            }
-        }
+        RepositoryUtil repoUtil = RepositoryUtil.INSTANCE;
+       
         final IEclipsePreferences corePrefs = repoUtil.getPreferences();
         if (corePrefs != null) {
             rootFolderPreference = corePrefs.get(DEFAULT_REPOSITORY_DIR_CORE_KEY, null);

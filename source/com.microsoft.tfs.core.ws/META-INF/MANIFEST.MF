@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: com.microsoft.tfs.core.ws
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: com.microsoft.tfs.core.ws;singleton:=true
@@ -6,7 +7,7 @@ Bundle-Version: 14.139.0.qualifier
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: com.microsoft.tfs.core.ws.jar
 Require-Bundle: com.microsoft.tfs.core.httpclient,
  com.microsoft.tfs.core.ws.runtime

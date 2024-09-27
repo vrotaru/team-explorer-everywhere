@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: com.microsoft.tfs.client.eclispe
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: com.microsoft.tfs.checkinpolicies.build; singleton:=true
@@ -7,7 +8,7 @@ Bundle-Activator: com.microsoft.tfs.checkinpolicies.build.TFSBuildCheckinPolicyP
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: com.microsoft.tfs.checkinpolicies.build.jar
 Require-Bundle: com.microsoft.tfs.checkinpolicies,
  com.microsoft.tfs.client.common.ui,

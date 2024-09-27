@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URI;
-import java.rmi.activation.ActivationException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: com.microsoft.tfs.sdk.samples.witcontrols
 Bundle-ManifestVersion: 2
 Bundle-Name: Sample TFS Custom Work item Controls
 Bundle-SymbolicName: com.microsoft.tfs.sdk.samples.witcontrols;singleton:=true
 Bundle-Version: 14.139.0.qualifier
 Bundle-Vendor: Microsoft Corporation
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: com.microsoft.tfs.client.common.ui
 Export-Package: com.microsoft.tfs.sdk.samples.witcontrols

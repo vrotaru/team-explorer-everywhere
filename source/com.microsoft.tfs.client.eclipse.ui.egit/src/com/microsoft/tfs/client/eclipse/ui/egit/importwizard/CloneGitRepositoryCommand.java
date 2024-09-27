@@ -173,18 +173,7 @@ public class CloneGitRepositoryCommand extends TFSCommand {
     }
 
     private void registerClonedRepository(final String workingDirectory) {
-        RepositoryUtil repoUtil;
-        try {
-            repoUtil = org.eclipse.egit.core.Activator.getDefault().getRepositoryUtil();
-        } catch (final NoSuchMethodError error) {
-            try { // RepositoryUtil changed to singleton class and later an enum
-                java.lang.reflect.Field ref = RepositoryUtil.class.getField("INSTANCE"); //$NON-NLS-1$
-                if (java.lang.reflect.Modifier.isPrivate(ref.getModifiers())) ref.setAccessible(true);
-                repoUtil = (RepositoryUtil) ref.get(null);
-            } catch (final Exception exception) {
-                throw new RuntimeException(exception);
-            }
-        }
+        RepositoryUtil repoUtil = RepositoryUtil.INSTANCE;
         repoUtil.addConfiguredRepository(new File(workingDirectory, GIT_FOLDER_NAME));
     }
 
@@ -263,6 +252,15 @@ public class CloneGitRepositoryCommand extends TFSCommand {
         @Override
         public boolean isCancelled() {
             return parentProgress.isCanceled();
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public void showDuration(boolean enabled) {
+            // TODO Auto-generated method stub
+            
         }
 
     }

@@ -1,4 +1,5 @@
 Manifest-Version: 1.0
+Automatic-Module-Name: com.microsoft.tfs.util
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: com.microsoft.tfs.util;singleton:=true
@@ -6,7 +7,7 @@ Bundle-Version: 14.139.0.qualifier
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: com.microsoft.tfs.util.jar
 Require-Bundle: com.microsoft.tfs.logging
 Export-Package: com.microsoft.tfs.util,
