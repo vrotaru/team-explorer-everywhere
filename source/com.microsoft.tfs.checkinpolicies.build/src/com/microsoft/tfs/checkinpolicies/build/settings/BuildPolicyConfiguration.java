@@ -45,6 +45,7 @@ public class BuildPolicyConfiguration {
                 false,
                 false,
                 false),
+         // TODO: Remove or replace. Findbugs plugin is dead. Spotbugs replaced it.
             new MarkerMatch(
                 "edu.umd.cs.findbugs.plugin.eclipse.findbugsMarker", //$NON-NLS-1$
                 true,
