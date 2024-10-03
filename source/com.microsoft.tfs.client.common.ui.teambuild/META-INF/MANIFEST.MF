@@ -8,7 +8,7 @@ Bundle-Activator: com.microsoft.tfs.client.common.ui.teambuild.TFSTeamBuildPlugi
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ClassPath: com.microsoft.tfs.client.common.ui.teambuild.jar
 Require-Bundle: com.microsoft.tfs.client.common,
  com.microsoft.tfs.client.common.ui,

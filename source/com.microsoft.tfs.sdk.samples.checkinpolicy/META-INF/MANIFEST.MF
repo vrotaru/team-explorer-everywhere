@@ -5,7 +5,7 @@ Bundle-Name: Sample TFS Check-in Policy
 Bundle-SymbolicName: com.microsoft.tfs.sdk.samples.checkinpolicy;singleton:=true
 Bundle-Version: 14.139.0.qualifier
 Bundle-Vendor: Microsoft Corporation
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: com.microsoft.tfs.checkinpolicies,
  org.eclipse.ui
 Export-Package: com.microsoft.tfs.sdk.samples.checkinpolicy

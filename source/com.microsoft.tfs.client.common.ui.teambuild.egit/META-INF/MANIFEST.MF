@@ -7,7 +7,7 @@ Bundle-Version: 14.139.0.qualifier
 Bundle-Vendor: %Bundle-Vendor
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Require-Bundle: com.microsoft.tfs.client.common.ui,
  com.microsoft.tfs.client.common.ui.teambuild,
  org.eclipse.egit.core;resolution:=optional,
