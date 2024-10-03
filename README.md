@@ -1,7 +1,5 @@
 ## TEE plugin for Modern (as of 2024-09) Eclipse.
 
-#### Original README
-
 Original README can be found in [here](./README.orig.md)
 
 ### Non goals.
