@@ -4,11 +4,11 @@ Original README can be found in [here](./README.orig.md)
 
 ### Non goals.
 
-Port the whole *TEE* project with automatic builds for both plugin and cli versions of the software
+Port the whole *TEE* project with automatic builds for both plugin and cli versions of the software or a large number of Eclipse versions.
 
 ### Goals
 
-Have a way to produce a TEE plugin which can used with current versions of Eclipse. Even if the build process is manual.
+Have a way to produce a TEE plugin which can used with recent versions of Eclipse. Even if the build process is manual.
 
 And it is. But the steps are rather simple. Especially if you have some experience with building Eclipse plugins.
 
