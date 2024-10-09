@@ -284,6 +284,15 @@ public class TeamExplorerTileControl extends BaseControl {
             }
         });
     }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void dispose() {
+        colorBar.getEnabledImage().dispose();
+        super.dispose();
+    }
 
     private void bindMenu() {
         final Menu menu = popupMenuManager.createContextMenu(composite.getShell());
