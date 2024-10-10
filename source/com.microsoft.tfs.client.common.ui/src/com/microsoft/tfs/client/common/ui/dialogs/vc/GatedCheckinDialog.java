@@ -261,6 +261,15 @@ public class GatedCheckinDialog extends BaseDialog {
         return bypassBuildValidation;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean close() {
+        image.dispose();
+        return super.close();
+    }
+
     @Override
     protected String provideDialogTitle() {
         return Messages.getString("GatedCheckinDialog.DialogTitle"); //$NON-NLS-1$
