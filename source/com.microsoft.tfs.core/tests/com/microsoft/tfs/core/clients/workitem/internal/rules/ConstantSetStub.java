@@ -35,7 +35,7 @@ public class ConstantSetStub implements IConstantSet {
 
     @Override
     public boolean containsConstID(final int constId) {
-        return constantIds.contains(new Integer(constId));
+        return constantIds.contains(Integer.valueOf(constId));
     }
 
     @Override

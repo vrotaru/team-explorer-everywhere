@@ -158,7 +158,7 @@ public class CodePageMapping {
 
         for (int i = 0; i < codePageStrings.length; i++) {
             try {
-                final Integer codePage = new Integer(codePageStrings[i]);
+                final Integer codePage = Integer.valueOf(codePageStrings[i]);
 
                 if (!codePageList.contains(codePage)) {
                     codePageList.add(codePage);

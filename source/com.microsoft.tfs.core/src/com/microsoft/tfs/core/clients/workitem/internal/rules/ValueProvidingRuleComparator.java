@@ -8,8 +8,8 @@ import java.util.Comparator;
 import com.microsoft.tfs.core.clients.workitem.internal.metadata.SpecialConstantIDs;
 
 public class ValueProvidingRuleComparator implements Comparator<Rule> {
-    private static final Integer R1_GREATER = new Integer(1);
-    private static final Integer R2_GREATER = new Integer(-1);
+    private static final Integer R1_GREATER = Integer.valueOf(1);
+    private static final Integer R2_GREATER = Integer.valueOf(-1);
 
     @Override
     public int compare(final Rule r1, final Rule r2) {
@@ -122,7 +122,7 @@ public class ValueProvidingRuleComparator implements Comparator<Rule> {
             final int r1Count = (r1IsConstId != 0 ? 1 : 0) + (r1WasConstId != 0 ? 1 : 0);
             final int r2Count = (r2IsConstId != 0 ? 1 : 0) + (r2WasConstId != 0 ? 1 : 0);
             if (r1Count != r2Count) {
-                return new Integer(r1Count - r2Count);
+                return Integer.valueOf(r1Count - r2Count);
             }
         }
 

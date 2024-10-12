@@ -121,7 +121,7 @@ public class DisplayFieldsResultOptionsControl extends BaseResultOptionsControl 
             final DisplayField displayField = (DisplayField) selectedColumnItems[i];
             resultOptions.getDisplayFields().remove(displayField);
             fieldNames[i] = displayField.getFieldName();
-            nameToWidth.put(displayField.getFieldName(), new Integer(displayField.getWidth()));
+            nameToWidth.put(displayField.getFieldName(), Integer.valueOf(displayField.getWidth()));
         }
 
         return fieldNames;

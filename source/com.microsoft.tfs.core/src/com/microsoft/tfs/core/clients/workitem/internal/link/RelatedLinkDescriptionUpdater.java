@@ -43,7 +43,7 @@ public class RelatedLinkDescriptionUpdater implements LinkDescriptionUpdater {
 
     @Override
     public void addLinkToBeUpdated(final LinkImpl link) {
-        final Integer id = new Integer(((RelatedLink) link).getTargetWorkItemID());
+        final Integer id = Integer.valueOf(((RelatedLink) link).getTargetWorkItemID());
         if (!idsToLinks.containsKey(id)) {
             idsToLinks.put(id, new ArrayList());
         }
@@ -85,7 +85,7 @@ public class RelatedLinkDescriptionUpdater implements LinkDescriptionUpdater {
 
             for (int i = 0; i < queryResults.size(); i++) {
                 final WorkItem workItem = queryResults.getWorkItem(i);
-                final Integer id = new Integer(workItem.getFields().getID());
+                final Integer id = Integer.valueOf(workItem.getFields().getID());
                 final String description = WorkItemLinkUtils.buildDescriptionFromWorkItem(workItem);
 
                 final ArrayList links = (ArrayList) idsToLinks.get(id);

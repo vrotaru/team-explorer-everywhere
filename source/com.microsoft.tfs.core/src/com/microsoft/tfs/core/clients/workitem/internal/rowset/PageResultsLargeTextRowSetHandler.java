@@ -30,7 +30,7 @@ public class PageResultsLargeTextRowSetHandler extends BaseRowSetHandler {
             getIntValue("ID"), //$NON-NLS-1$
             getStringValue("Words")); //$NON-NLS-1$
 
-        final Integer key = new Integer(row.workItemId);
+        final Integer key = Integer.valueOf(row.workItemId);
 
         LongTextRowCollection collection = workItemIdToLongTextRowCollection.get(key);
         if (collection == null) {
@@ -63,7 +63,7 @@ public class PageResultsLargeTextRowSetHandler extends BaseRowSetHandler {
         private final Map<Integer, LongTextRow> fieldIdToLongTextRow = new HashMap<Integer, LongTextRow>();
 
         public void add(final LongTextRow newRow) {
-            final Integer key = new Integer(newRow.fieldId);
+            final Integer key = Integer.valueOf(newRow.fieldId);
 
             final LongTextRow existingRow = fieldIdToLongTextRow.get(key);
             if (existingRow == null || newRow.addedDate.after(existingRow.addedDate)) {

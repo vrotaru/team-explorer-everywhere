@@ -263,7 +263,7 @@ public class TableViewerSorter extends ViewerSorter {
      *        column
      */
     public void setComparator(final int columnIndex, final Comparator comparator) {
-        final Integer key = new Integer(columnIndex);
+        final Integer key = Integer.valueOf(columnIndex);
 
         if (comparator == null) {
             comparators.remove(key);
@@ -309,7 +309,7 @@ public class TableViewerSorter extends ViewerSorter {
      *         {@link Comparator} has been set for the specified column
      */
     public Comparator getComparator(final int columnIndex) {
-        return (Comparator) comparators.get(new Integer(columnIndex));
+        return (Comparator) comparators.get(Integer.valueOf(columnIndex));
     }
 
     /**
@@ -347,7 +347,7 @@ public class TableViewerSorter extends ViewerSorter {
      *        or <code>null</code> to use {@link SortDirection#ASCENDING}
      */
     public void setDefaultSortDirection(final int columnIndex, final SortDirection sortDirection) {
-        final Integer key = new Integer(columnIndex);
+        final Integer key = Integer.valueOf(columnIndex);
 
         if (sortDirection == null) {
             defaultSortDirections.remove(key);
@@ -393,7 +393,7 @@ public class TableViewerSorter extends ViewerSorter {
      *         <code>null</code>)
      */
     public SortDirection getDefaultSortDirection(final int columnIndex) {
-        SortDirection sortDirection = (SortDirection) defaultSortDirections.get(new Integer(columnIndex));
+        SortDirection sortDirection = (SortDirection) defaultSortDirections.get(Integer.valueOf(columnIndex));
         if (sortDirection == null) {
             sortDirection = SortDirection.ASCENDING;
         }
@@ -536,7 +536,7 @@ public class TableViewerSorter extends ViewerSorter {
         }
 
         if (sortDirection == null) {
-            sortDirection = (SortDirection) defaultSortDirections.get(new Integer(columnIndex));
+            sortDirection = (SortDirection) defaultSortDirections.get(Integer.valueOf(columnIndex));
             if (sortDirection == null) {
                 sortDirection = SortDirection.ASCENDING;
             }
@@ -775,7 +775,7 @@ public class TableViewerSorter extends ViewerSorter {
                 sortColumn
             });
             setSortDirection.invoke(table, new Object[] {
-                new Integer(direction)
+                Integer.valueOf(direction)
             });
         } catch (final Exception e) {
 

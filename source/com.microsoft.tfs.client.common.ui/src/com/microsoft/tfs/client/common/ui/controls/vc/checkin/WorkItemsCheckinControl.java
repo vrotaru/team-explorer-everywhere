@@ -104,7 +104,7 @@ public class WorkItemsCheckinControl extends AbstractCheckinSubControl {
                     final Field marginTopField = GridLayout.class.getDeclaredField("marginTop"); //$NON-NLS-1$
 
                     if (marginTopField != null) {
-                        marginTopField.set(searchLayout, new Integer(getVerticalMargin()));
+                        marginTopField.set(searchLayout, Integer.valueOf(getVerticalMargin()));
                     }
                 } catch (final Exception e) {
                     /* Ignore, aesthetic only. */

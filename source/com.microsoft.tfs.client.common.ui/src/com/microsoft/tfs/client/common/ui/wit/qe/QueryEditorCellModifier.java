@@ -369,7 +369,7 @@ public class QueryEditorCellModifier implements ICellModifier {
         propertyNameToComboText.remove(property);
 
         if (objectModelValue == null) {
-            return new Integer(-1);
+            return Integer.valueOf(-1);
         }
 
         final ComboBoxCellEditor comboBoxCellEditor = (ComboBoxCellEditor) getCellEditorForProperty(property);
@@ -377,11 +377,11 @@ public class QueryEditorCellModifier implements ICellModifier {
 
         for (int i = 0; i < items.length; i++) {
             if (objectModelValue.equalsIgnoreCase(items[i])) {
-                return new Integer(i);
+                return Integer.valueOf(i);
             }
         }
 
-        return new Integer(-1);
+        return Integer.valueOf(-1);
     }
 
     /**

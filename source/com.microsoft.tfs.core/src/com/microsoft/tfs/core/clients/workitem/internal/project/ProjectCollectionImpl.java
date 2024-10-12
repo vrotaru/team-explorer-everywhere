@@ -56,13 +56,13 @@ public class ProjectCollectionImpl implements ProjectCollection {
 
     @Override
     public Project getByID(final int id) {
-        final Integer idKey = new Integer(id);
+        final Integer idKey = Integer.valueOf(id);
 
         if (!idToProjectMap.containsKey(idKey)) {
             throw new DeniedOrNotExistException();
         }
 
-        return idToProjectMap.get(new Integer(id));
+        return idToProjectMap.get(Integer.valueOf(id));
     }
 
     @Override
@@ -96,6 +96,6 @@ public class ProjectCollectionImpl implements ProjectCollection {
     private void addProject(final Project project) {
         projects.add(project);
         nameToProjectMap.put(project.getName().toLowerCase(), project);
-        idToProjectMap.put(new Integer(project.getID()), project);
+        idToProjectMap.put(Integer.valueOf(project.getID()), project);
     }
 }

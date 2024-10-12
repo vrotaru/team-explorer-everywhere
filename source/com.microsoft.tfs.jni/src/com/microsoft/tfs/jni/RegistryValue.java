@@ -26,7 +26,7 @@ public class RegistryValue {
 
     public RegistryValue(final String name, final int value) {
         this.name = name;
-        this.value = new Integer(value);
+        this.value = Integer.valueOf(value);
         this.type = ValueType.REG_DWORD;
     }
 

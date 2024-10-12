@@ -66,9 +66,9 @@ public class WorkItemRelationsRowSetHandler extends BaseGetWorkItemRowSetHandler
          */
         final Integer currentCount = data.get(changedDate);
         if (currentCount == null) {
-            data.put(changedDate, new Integer(1));
+            data.put(changedDate, Integer.valueOf(1));
         } else {
-            data.put(changedDate, new Integer(currentCount.intValue() + 1));
+            data.put(changedDate, Integer.valueOf(currentCount.intValue() + 1));
         }
     }
 
@@ -85,7 +85,7 @@ public class WorkItemRelationsRowSetHandler extends BaseGetWorkItemRowSetHandler
              * revision
              */
             revision.getFieldInternal(WorkItemFieldIDs.RELATED_LINK_COUNT).setOriginalValue(
-                new Integer(currentRelatedLinkCount));
+                Integer.valueOf(currentRelatedLinkCount));
 
             if (data.containsKey(revisionDate)) {
                 /*
@@ -101,7 +101,7 @@ public class WorkItemRelationsRowSetHandler extends BaseGetWorkItemRowSetHandler
              * new value for this revision
              */
             revision.getFieldInternal(WorkItemFieldIDs.RELATED_LINK_COUNT).setNewValue(
-                new Integer(currentRelatedLinkCount));
+                Integer.valueOf(currentRelatedLinkCount));
         }
     }
 }

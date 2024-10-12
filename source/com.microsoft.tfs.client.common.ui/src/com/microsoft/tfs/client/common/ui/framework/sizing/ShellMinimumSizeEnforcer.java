@@ -89,8 +89,8 @@ public class ShellMinimumSizeEnforcer {
                 Integer.TYPE
             });
             m.invoke(shell, new Object[] {
-                new Integer(minimumWidth),
-                new Integer(minimumHeight)
+                Integer.valueOf(minimumWidth),
+                Integer.valueOf(minimumHeight)
             });
             return true;
         } catch (final Throwable t) {

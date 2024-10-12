@@ -233,7 +233,7 @@ public class BrowserFacade {
          * Object: web browser object
          */
         final Object webBrowser = createBrowserMethod.invoke(workbenchBrowserSupport, new Object[] {
-            new Integer(style),
+            Integer.valueOf(style),
             browserId,
             title,
             tooltip

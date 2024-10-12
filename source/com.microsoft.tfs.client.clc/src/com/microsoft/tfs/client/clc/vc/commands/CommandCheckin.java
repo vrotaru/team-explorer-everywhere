@@ -438,7 +438,7 @@ public final class CommandCheckin extends Command {
                 throw new InvalidOptionValueException(e.getLocalizedMessage());
             }
 
-            idToWorkItemMap.put(new Integer(wi.getFields().getID()), wi);
+            idToWorkItemMap.put(Integer.valueOf(wi.getFields().getID()), wi);
         }
 
         // Convert from "checked" (persisted in saved checkins) to "checkin"
@@ -448,7 +448,7 @@ public final class CommandCheckin extends Command {
 
         for (int i = 0; i < checkedInfos.length; i++) {
             final WorkItemCheckedInfo checkedInfo = checkedInfos[i];
-            final WorkItem wi = idToWorkItemMap.get(new Integer(checkedInfo.getID()));
+            final WorkItem wi = idToWorkItemMap.get(Integer.valueOf(checkedInfo.getID()));
             final WorkItemCheckinInfo checkinInfo = new WorkItemCheckinInfo(wi);
 
             checkinInfo.setAction(checkedInfo.getCheckinAction());

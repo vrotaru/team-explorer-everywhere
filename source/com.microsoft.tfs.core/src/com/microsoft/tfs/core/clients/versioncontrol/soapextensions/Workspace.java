@@ -2738,7 +2738,7 @@ public final class Workspace extends WebServiceObjectWrapper implements Comparab
             final List<String> conflictPaths = new ArrayList<String>();
             for (final Conflict conflict : conflicts) {
                 if (conflict.isResolved()) {
-                    itemIDConflictMap.put(new Integer(conflict.getYourItemID()), conflict);
+                    itemIDConflictMap.put(Integer.valueOf(conflict.getYourItemID()), conflict);
                 } else {
                     conflictPaths.add(conflict.getServerPath());
                 }
@@ -2749,7 +2749,7 @@ public final class Workspace extends WebServiceObjectWrapper implements Comparab
              * previously.
              */
             for (final GetOperation operation : operations) {
-                final Conflict conflict = itemIDConflictMap.get(new Integer(operation.getItemID()));
+                final Conflict conflict = itemIDConflictMap.get(Integer.valueOf(operation.getItemID()));
 
                 if (conflict != null) {
                     operation.setMergeDetails(conflict);

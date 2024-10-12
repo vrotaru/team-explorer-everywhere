@@ -53,9 +53,9 @@ public class SortFieldListImpl implements SortFieldList {
                 fieldDefinition));
         }
 
-        if (!ids.contains(new Integer(fieldDefinition.getID()))) {
+        if (!ids.contains(Integer.valueOf(fieldDefinition.getID()))) {
             sortFields.add(new SortField(fieldDefinition, sortType));
-            ids.add(new Integer(fieldDefinition.getID()));
+            ids.add(Integer.valueOf(fieldDefinition.getID()));
             return true;
         }
 
@@ -74,7 +74,7 @@ public class SortFieldListImpl implements SortFieldList {
 
     @Override
     public int indexOf(final FieldDefinition fieldDefinition) {
-        return ids.indexOf(new Integer(fieldDefinition.getID()));
+        return ids.indexOf(Integer.valueOf(fieldDefinition.getID()));
     }
 
     @Override
@@ -108,7 +108,7 @@ public class SortFieldListImpl implements SortFieldList {
         }
 
         sortFields.add(ix, new SortField(fieldDefinition, sortType));
-        ids.add(ix, new Integer(fieldDefinition.getID()));
+        ids.add(ix, Integer.valueOf(fieldDefinition.getID()));
     }
 
     @Override

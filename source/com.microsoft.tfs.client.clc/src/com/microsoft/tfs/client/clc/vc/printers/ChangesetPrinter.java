@@ -72,7 +72,7 @@ public final class ChangesetPrinter {
 
             if (includeChanges) {
                 table.addRow(new String[] {
-                    new Integer(cs.getChangesetID()).toString(),
+                    Integer.valueOf(cs.getChangesetID()).toString(),
                     getChangeString(cs),
                     cs.getOwnerDisplayName(),
                     dateFormat.format(cs.getDate().getTime()),
@@ -80,7 +80,7 @@ public final class ChangesetPrinter {
                 });
             } else {
                 table.addRow(new String[] {
-                    new Integer(cs.getChangesetID()).toString(),
+                    Integer.valueOf(cs.getChangesetID()).toString(),
                     cs.getOwnerDisplayName(),
                     dateFormat.format(cs.getDate().getTime()),
                     cs.getComment()

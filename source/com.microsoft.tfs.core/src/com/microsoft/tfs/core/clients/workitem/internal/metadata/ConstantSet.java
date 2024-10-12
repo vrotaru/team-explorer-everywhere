@@ -101,7 +101,7 @@ public class ConstantSet implements IConstantSet {
         this.values.addAll(Arrays.asList(values));
 
         for (int i = 0; i < constIds.length; i++) {
-            this.constIds.add(new Integer(constIds[i]));
+            this.constIds.add(Integer.valueOf(constIds[i]));
         }
 
         this.queryCount = queryCount;
@@ -182,7 +182,7 @@ public class ConstantSet implements IConstantSet {
                     final String string = rset.getString(2);
                     final String displayName = rset.getString(3);
                     values.add(displayName != null ? displayName : string);
-                    constIds.add(new Integer(constId));
+                    constIds.add(Integer.valueOf(constId));
                 }
             });
         } else {
@@ -197,7 +197,7 @@ public class ConstantSet implements IConstantSet {
              */
             Set<Integer> rootIds = new HashSet<Integer>();
             for (int i = 0; i < startingRootIds.length; i++) {
-                rootIds.add(new Integer(startingRootIds[i]));
+                rootIds.add(Integer.valueOf(startingRootIds[i]));
             }
             allParentIds.addAll(rootIds);
 
@@ -244,7 +244,7 @@ public class ConstantSet implements IConstantSet {
             @Override
             public void handleRow(final ResultSet rset) throws SQLException {
                 final int constId = rset.getInt(1);
-                childIds.add(new Integer(constId));
+                childIds.add(Integer.valueOf(constId));
             }
         });
 
@@ -305,7 +305,7 @@ public class ConstantSet implements IConstantSet {
                     final String string = rset.getString(2);
                     final String displayName = rset.getString(3);
                     values.add(displayName != null ? displayName : string);
-                    constIds.add(new Integer(constId));
+                    constIds.add(Integer.valueOf(constId));
                 }
             });
         }
@@ -378,6 +378,6 @@ public class ConstantSet implements IConstantSet {
 
     @Override
     public boolean containsConstID(final int constId) {
-        return constIds.contains(new Integer(constId));
+        return constIds.contains(Integer.valueOf(constId));
     }
 }

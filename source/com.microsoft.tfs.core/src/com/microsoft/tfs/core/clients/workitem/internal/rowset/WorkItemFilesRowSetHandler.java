@@ -94,7 +94,7 @@ public class WorkItemFilesRowSetHandler extends BaseGetWorkItemRowSetHandler {
     }
 
     private void incrementCount(final Map<Integer, Map<Date, Integer>> data, final int fieldId, final Date date) {
-        final Integer key = new Integer(fieldId);
+        final Integer key = Integer.valueOf(fieldId);
 
         Map<Date, Integer> countMap = data.get(key);
         if (countMap == null) {
@@ -103,9 +103,9 @@ public class WorkItemFilesRowSetHandler extends BaseGetWorkItemRowSetHandler {
         }
         final Integer currentCount = countMap.get(date);
         if (currentCount == null) {
-            countMap.put(date, new Integer(1));
+            countMap.put(date, Integer.valueOf(1));
         } else {
-            countMap.put(date, new Integer(currentCount.intValue() + 1));
+            countMap.put(date, Integer.valueOf(currentCount.intValue() + 1));
         }
     }
 
@@ -148,12 +148,12 @@ public class WorkItemFilesRowSetHandler extends BaseGetWorkItemRowSetHandler {
         int currentCount,
         final int trackerFieldId,
         final int countFieldId) {
-        final Integer key = new Integer(trackerFieldId);
+        final Integer key = Integer.valueOf(trackerFieldId);
 
         /*
          * set the old value for the revision from currentCount
          */
-        revision.getFieldInternal(countFieldId).setOriginalValue(new Integer(currentCount));
+        revision.getFieldInternal(countFieldId).setOriginalValue(Integer.valueOf(currentCount));
 
         /*
          * modify the currentCount with any adds for the revision date
@@ -181,7 +181,7 @@ public class WorkItemFilesRowSetHandler extends BaseGetWorkItemRowSetHandler {
          * now currentCount holds the (possibly modified) new value for this
          * revision
          */
-        revision.getFieldInternal(countFieldId).setNewValue(new Integer(currentCount));
+        revision.getFieldInternal(countFieldId).setNewValue(Integer.valueOf(currentCount));
 
         return currentCount;
     }

@@ -239,7 +239,7 @@ public final class WorkItemClient implements Closable {
          * exist on the server, or the current user may not have access to the
          * work item with that ID.
          */
-        workItem.getFieldsInternal().addOriginalFieldValueLocal(WorkItemFieldIDs.ID, new Integer(id), true);
+        workItem.getFieldsInternal().addOriginalFieldValueLocal(WorkItemFieldIDs.ID, Integer.valueOf(id), true);
 
         /*
          * open the work item

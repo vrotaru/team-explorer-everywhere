@@ -211,7 +211,7 @@ public class DefaultHttpParams implements HttpParams, Serializable, Cloneable {
 
     @Override
     public void setIntParameter(final String name, final int value) {
-        setParameter(name, new Integer(value));
+        setParameter(name, Integer.valueOf(value));
     }
 
     @Override

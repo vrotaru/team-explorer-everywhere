@@ -39,7 +39,7 @@ public final class DeletionVersionSpec extends VersionSpec {
     @Override
     public String toString() {
         // Returns something like "X3".
-        return IDENTIFIER + new Integer(deletionID).toString();
+        return IDENTIFIER + Integer.valueOf(deletionID).toString();
     }
 
     /*

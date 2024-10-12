@@ -52,7 +52,7 @@ public class HTTPUtil {
                     } else {
                         // Not 7 Bit use the unicode system
                         sb.append("&#"); //$NON-NLS-1$
-                        sb.append(new Integer(ci).toString());
+                        sb.append(Integer.valueOf(ci).toString());
                         sb.append(';');
                     }
                 }

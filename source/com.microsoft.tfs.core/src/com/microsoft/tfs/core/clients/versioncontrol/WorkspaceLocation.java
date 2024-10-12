@@ -35,7 +35,7 @@ public class WorkspaceLocation extends TypesafeEnum {
     private WorkspaceLocation(final int value) {
         super(value);
 
-        final Integer key = new Integer(value);
+        final Integer key = Integer.valueOf(value);
         Check.isTrue(!VALUE_MAP.containsKey(key), "duplicate key"); //$NON-NLS-1$
         VALUE_MAP.put(key, this);
     }
@@ -49,7 +49,7 @@ public class WorkspaceLocation extends TypesafeEnum {
      *         <code>null</code> if none matched
      */
     public static WorkspaceLocation fromInteger(final int value) {
-        final Integer key = new Integer(value);
+        final Integer key = Integer.valueOf(value);
         Check.isTrue(VALUE_MAP.containsKey(key), "VALUE_MAP.containsKey(key)"); //$NON-NLS-1$
         return VALUE_MAP.get(key);
     }

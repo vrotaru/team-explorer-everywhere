@@ -73,7 +73,7 @@ public class WITContextStub implements IWITContext {
         private final Map<Integer, List<Rule>> areaIdToRules = new HashMap<Integer, List<Rule>>();
 
         public void addRule(final Rule rule) {
-            final Integer key = new Integer(rule.getAreaID());
+            final Integer key = Integer.valueOf(rule.getAreaID());
             List<Rule> rules = areaIdToRules.get(key);
             if (rules == null) {
                 rules = new ArrayList<Rule>();
@@ -90,7 +90,7 @@ public class WITContextStub implements IWITContext {
             results.nonDefaultRules = new ArrayList<Rule>();
             results.affectedFieldIds = new HashSet<Integer>();
 
-            final List<Rule> rules = areaIdToRules.get(new Integer(areaId));
+            final List<Rule> rules = areaIdToRules.get(Integer.valueOf(areaId));
             if (rules != null) {
                 for (final Rule rule : rules) {
                     if (rule.isFlagDefault()) {
@@ -98,7 +98,7 @@ public class WITContextStub implements IWITContext {
                     } else {
                         results.nonDefaultRules.add(rule);
                     }
-                    results.affectedFieldIds.add(new Integer(rule.getThenFldID()));
+                    results.affectedFieldIds.add(Integer.valueOf(rule.getThenFldID()));
                 }
             }
 
@@ -204,12 +204,12 @@ public class WITContextStub implements IWITContext {
         private final Map<Integer, String> constants = new HashMap<Integer, String>();
 
         public void addConstant(final int id, final String constant) {
-            constants.put(new Integer(id), constant);
+            constants.put(Integer.valueOf(id), constant);
         }
 
         @Override
         public String getConstantByID(final int id) {
-            final Integer key = new Integer(id);
+            final Integer key = Integer.valueOf(id);
 
             if (!constants.containsKey(key)) {
                 throw new IllegalArgumentException("no constant exists with id [" + id + "]"); //$NON-NLS-1$ //$NON-NLS-2$

@@ -54,7 +54,7 @@ public class BuildInformationNodeComparer implements Comparator<IBuildInformatio
         if (leftTimestamp != null && rightTimestamp != null) {
             return leftTimestamp.compareTo(rightTimestamp);
         } else {
-            return new Integer(x.getID()).compareTo(y.getID());
+            return Integer.valueOf(x.getID()).compareTo(y.getID());
         }
     }
 }

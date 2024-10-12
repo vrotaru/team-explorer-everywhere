@@ -427,7 +427,7 @@ public class RetentionPolicyTableControl extends TableControl {
                 final String keepText = getRetentionPolicyText(keepCount);
                 for (int i = 0; i < items.length; i++) {
                     if (items[i].equals(keepText)) {
-                        return new Integer(i);
+                        return Integer.valueOf(i);
                     }
                 }
             } else if (DELETE_COL.equals(property)) {
@@ -435,7 +435,7 @@ public class RetentionPolicyTableControl extends TableControl {
                 final String text = getWhatToDeleteText(option);
                 for (int i = 0; i < deleteItems.length; i++) {
                     if (deleteItems[i].equals(text)) {
-                        return new Integer(i);
+                        return Integer.valueOf(i);
                     }
                 }
             }

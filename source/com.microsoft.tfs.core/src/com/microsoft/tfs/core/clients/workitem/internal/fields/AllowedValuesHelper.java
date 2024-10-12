@@ -153,7 +153,7 @@ public class AllowedValuesHelper {
                 /*
                  * add the current rule's thenconstid to this slot's list
                  */
-                ruleSlots[slotIndex].add(new Integer(rules[i].getThenConstID()));
+                ruleSlots[slotIndex].add(Integer.valueOf(rules[i].getThenConstID()));
             }
         }
 

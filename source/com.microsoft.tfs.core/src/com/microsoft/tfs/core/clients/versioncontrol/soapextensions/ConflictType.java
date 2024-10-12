@@ -31,7 +31,7 @@ public class ConflictType extends EnumerationWrapper {
         super(conflictType);
         this.value = value;
 
-        final Integer key = new Integer(value);
+        final Integer key = Integer.valueOf(value);
         Check.isTrue(!VALUE_MAP.containsKey(key), "duplicate key"); //$NON-NLS-1$
         VALUE_MAP.put(key, this);
     }
@@ -44,7 +44,7 @@ public class ConflictType extends EnumerationWrapper {
      * @return The ConflictType corresponding to this value.
      */
     public static ConflictType fromInteger(final int value) {
-        final Integer key = new Integer(value);
+        final Integer key = Integer.valueOf(value);
         Check.isTrue(VALUE_MAP.containsKey(key), "VALUE_MAP.containsKey(key)"); //$NON-NLS-1$
         return VALUE_MAP.get(key);
     }

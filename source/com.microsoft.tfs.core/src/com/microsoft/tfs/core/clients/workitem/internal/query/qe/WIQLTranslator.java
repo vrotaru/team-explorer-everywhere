@@ -596,7 +596,7 @@ public class WIQLTranslator {
         newRow.setOperator(localizedOperator);
         newRow.setValue(fieldValue);
 
-        hash.put(nodeCondition, new Integer(rowCollection.indexOf(newRow)));
+        hash.put(nodeCondition, Integer.valueOf(rowCollection.indexOf(newRow)));
     }
 
     private void parseLinkTypesCondition(final NodeCondition nodeCondition) {

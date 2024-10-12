@@ -45,17 +45,17 @@ public class WorkItemLinkTypeCollectionImpl implements WorkItemLinkTypeCollectio
             final WorkItemLinkType linkType = new WorkItemLinkType(context, linkTypeMetaData);
             mapByName.put(linkType.getReferenceName(), linkType);
 
-            forwardIds.add(new Integer(linkTypeMetaData.getForwardID()));
-            reverseIds.add(new Integer(linkTypeMetaData.getReverseID()));
+            forwardIds.add(Integer.valueOf(linkTypeMetaData.getForwardID()));
+            reverseIds.add(Integer.valueOf(linkTypeMetaData.getReverseID()));
 
-            idToReferenceName.put(new Integer(linkTypeMetaData.getForwardID()), linkTypeMetaData.getReferenceName());
-            idToDisplayName.put(new Integer(linkTypeMetaData.getForwardID()), linkTypeMetaData.getForwardName());
+            idToReferenceName.put(Integer.valueOf(linkTypeMetaData.getForwardID()), linkTypeMetaData.getReferenceName());
+            idToDisplayName.put(Integer.valueOf(linkTypeMetaData.getForwardID()), linkTypeMetaData.getForwardName());
 
             if (linkTypeMetaData.getForwardID() != linkTypeMetaData.getReverseID()) {
                 idToReferenceName.put(
-                    new Integer(linkTypeMetaData.getReverseID()),
+                    Integer.valueOf(linkTypeMetaData.getReverseID()),
                     linkTypeMetaData.getReferenceName());
-                idToDisplayName.put(new Integer(linkTypeMetaData.getReverseID()), linkTypeMetaData.getReverseName());
+                idToDisplayName.put(Integer.valueOf(linkTypeMetaData.getReverseID()), linkTypeMetaData.getReverseName());
             }
         }
 
@@ -70,7 +70,7 @@ public class WorkItemLinkTypeCollectionImpl implements WorkItemLinkTypeCollectio
      */
     @Override
     public String getDisplayName(final int linkTypeId) {
-        final Integer boxedId = new Integer(linkTypeId);
+        final Integer boxedId = Integer.valueOf(linkTypeId);
 
         if (idToDisplayName.containsKey(boxedId)) {
             return idToDisplayName.get(boxedId);
@@ -84,7 +84,7 @@ public class WorkItemLinkTypeCollectionImpl implements WorkItemLinkTypeCollectio
      */
     @Override
     public String getReferenceName(final int linkTypeId) {
-        final Integer boxedId = new Integer(linkTypeId);
+        final Integer boxedId = Integer.valueOf(linkTypeId);
 
         if (idToReferenceName.containsKey(boxedId)) {
             return idToReferenceName.get(boxedId);
@@ -98,7 +98,7 @@ public class WorkItemLinkTypeCollectionImpl implements WorkItemLinkTypeCollectio
      */
     @Override
     public boolean isForwardLink(final int linkTypeId) {
-        return forwardIds.contains(new Integer(linkTypeId));
+        return forwardIds.contains(Integer.valueOf(linkTypeId));
     }
 
     /**
@@ -106,7 +106,7 @@ public class WorkItemLinkTypeCollectionImpl implements WorkItemLinkTypeCollectio
      */
     @Override
     public boolean isReverseLink(final int linkTypeId) {
-        return reverseIds.contains(new Integer(linkTypeId));
+        return reverseIds.contains(Integer.valueOf(linkTypeId));
     }
 
     @Override

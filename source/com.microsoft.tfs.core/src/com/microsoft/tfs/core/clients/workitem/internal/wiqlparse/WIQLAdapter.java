@@ -507,7 +507,7 @@ public class WIQLAdapter implements IExternal {
 
                 if (cond.getCondition() == Condition.EQUALS) {
                     final Map<Integer, Boolean> linkTypes = new HashMap<Integer, Boolean>();
-                    linkTypes.put(new Integer(linkTypeEnd.getID()), Boolean.TRUE);
+                    linkTypes.put(Integer.valueOf(linkTypeEnd.getID()), Boolean.TRUE);
                     return linkTypes;
                 } else if (cond.getCondition() == Condition.NOT_EQUALS) {
                     final Map<Integer, Boolean> linkTypes = new HashMap<Integer, Boolean>();
@@ -517,7 +517,7 @@ public class WIQLAdapter implements IExternal {
                         final WorkItemLinkTypeEnd t = it.next();
 
                         if (t.getID() != linkTypeEnd.getID()) {
-                            linkTypes.put(new Integer(t.getID()), Boolean.TRUE);
+                            linkTypes.put(Integer.valueOf(t.getID()), Boolean.TRUE);
                         }
                     }
                     return linkTypes;
@@ -571,11 +571,11 @@ public class WIQLAdapter implements IExternal {
                     final WorkItemLinkTypeEnd t = it.next();
 
                     /* TODO: this looks like a programming error */
-                    if (!linkTypes.containsKey(new Integer(t.getID()))) {
+                    if (!linkTypes.containsKey(Integer.valueOf(t.getID()))) {
                         ;
                     }
                     {
-                        ret.put(new Integer(t.getID()), Boolean.TRUE);
+                        ret.put(Integer.valueOf(t.getID()), Boolean.TRUE);
                     }
                 }
 

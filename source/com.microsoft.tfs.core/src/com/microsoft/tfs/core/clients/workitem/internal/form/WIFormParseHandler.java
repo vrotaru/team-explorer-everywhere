@@ -239,7 +239,7 @@ public class WIFormParseHandler extends DefaultHandler {
     public static Integer readIntegerValue(final Attributes attributes, final String attributeName) {
         final String value = attributes.getValue(attributeName);
         if (value != null) {
-            return new Integer(value);
+            return Integer.valueOf(value);
         } else {
             return null;
         }

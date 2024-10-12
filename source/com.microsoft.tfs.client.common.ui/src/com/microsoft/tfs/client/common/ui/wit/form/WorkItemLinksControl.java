@@ -556,7 +556,7 @@ public class WorkItemLinksControl extends BaseWITComponentControl {
         final HashSet<Integer> mapWorkItemIds = new HashSet<Integer>();
         final int[] workItemIds = workItems.getIDs();
         for (int i = 0; i < workItemIds.length; i++) {
-            mapWorkItemIds.add(new Integer(workItemIds[i]));
+            mapWorkItemIds.add(Integer.valueOf(workItemIds[i]));
         }
 
         final ArrayList<Link> filteredByWorkItemType = new ArrayList<Link>();
@@ -564,7 +564,7 @@ public class WorkItemLinksControl extends BaseWITComponentControl {
             final Link link = filteredByLinkType.get(i);
 
             if (link instanceof RelatedLink) {
-                final Integer boxedId = new Integer(((RelatedLink) link).getTargetWorkItemID());
+                final Integer boxedId = Integer.valueOf(((RelatedLink) link).getTargetWorkItemID());
                 if (mapWorkItemIds.contains(boxedId)) {
                     filteredByWorkItemType.add(link);
                 }

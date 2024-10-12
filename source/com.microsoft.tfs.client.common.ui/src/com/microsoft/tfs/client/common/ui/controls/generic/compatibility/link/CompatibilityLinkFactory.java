@@ -59,7 +59,7 @@ public class CompatibilityLinkFactory {
             Integer.TYPE
         }).newInstance(new Object[] {
             parent,
-            new Integer(SWT.NONE)
+            Integer.valueOf(SWT.NONE)
         });
 
         return new NewLinkCompatibilityWrapper(link);

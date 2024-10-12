@@ -25,9 +25,9 @@ public class RulesTableImpl extends BaseMetadataDAO implements RulesTable {
             + "IfConstID = ?"; //$NON-NLS-1$
 
         final Integer result = getConnection().createStatement(sql).executeIntQuery(new Object[] {
-            new Integer(teamProjectId),
-            new Integer(WorkItemFieldIDs.WORK_ITEM_FORM_ID),
-            new Integer(workItemTypeNameConstID)
+            Integer.valueOf(teamProjectId),
+            Integer.valueOf(WorkItemFieldIDs.WORK_ITEM_FORM_ID),
+            Integer.valueOf(workItemTypeNameConstID)
         });
 
         if (result == null) {
@@ -45,7 +45,7 @@ public class RulesTableImpl extends BaseMetadataDAO implements RulesTable {
     public Rule[] getRulesForAreaNode(final int areaId) {
         return runRuleQuery("where AreaID = ? and fDeleted = 0", new Object[] //$NON-NLS-1$
         {
-            new Integer(areaId)
+            Integer.valueOf(areaId)
         });
     }
 
@@ -53,7 +53,7 @@ public class RulesTableImpl extends BaseMetadataDAO implements RulesTable {
     public Rule[] getRulesForThenFieldID(final int fieldId) {
         return runRuleQuery("where ThenFldID = ?", new Object[] //$NON-NLS-1$
         {
-            new Integer(fieldId)
+            Integer.valueOf(fieldId)
         });
     }
 

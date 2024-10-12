@@ -27,12 +27,12 @@ public class RuleTargetStub implements IRuleTarget {
     }
 
     public void addField(final RuleTargetFieldStub field) {
-        fields.put(new Integer(field.getID()), field);
+        fields.put(Integer.valueOf(field.getID()), field);
     }
 
     @Override
     public IRuleTargetField getRuleTargetField(final int fieldId) {
-        final Integer key = new Integer(fieldId);
+        final Integer key = Integer.valueOf(fieldId);
 
         if (!fields.containsKey(key)) {
             throw new IllegalArgumentException("the field id [" + fieldId + "] does not exist"); //$NON-NLS-1$ //$NON-NLS-2$

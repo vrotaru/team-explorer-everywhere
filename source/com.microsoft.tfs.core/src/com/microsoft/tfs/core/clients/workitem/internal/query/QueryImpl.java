@@ -443,11 +443,11 @@ public class QueryImpl implements Query {
             // Check all ID's are unique
             final HashSet<Integer> idSet = new HashSet<Integer>(ids.length);
             for (int i = 0; i < ids.length; i++) {
-                if (idSet.contains(new Integer(ids[i]))) {
+                if (idSet.contains(Integer.valueOf(ids[i]))) {
                     throw new DuplicateBatchReadParameterException();
                 }
 
-                idSet.add(new Integer(ids[i]));
+                idSet.add(Integer.valueOf(ids[i]));
             }
 
         }

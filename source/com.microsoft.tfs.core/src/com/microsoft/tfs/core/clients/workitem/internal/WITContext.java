@@ -355,7 +355,7 @@ public class WITContext implements IWITContext, IMetadataChangeListener {
          * area and iteration to the first writeable area and iteration node for
          * this user
          */
-        final Integer projectId = new Integer(type.getProject().getID());
+        final Integer projectId = Integer.valueOf(type.getProject().getID());
         workItem.getFieldsInternal().getFieldInternal(WorkItemFieldIDs.AREA_ID).setValue(
             projectId,
             FieldModificationType.NEW);
@@ -367,10 +367,10 @@ public class WITContext implements IWITContext, IMetadataChangeListener {
          * set the id and revision to 0
          */
         workItem.getFieldsInternal().getFieldInternal(WorkItemFieldIDs.ID).setValue(
-            new Integer(0),
+            Integer.valueOf(0),
             FieldModificationType.NEW);
         workItem.getFieldsInternal().getFieldInternal(WorkItemFieldIDs.REVISION).setValue(
-            new Integer(0),
+            Integer.valueOf(0),
             FieldModificationType.NEW);
     }
 }

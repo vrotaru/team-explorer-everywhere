@@ -5276,12 +5276,12 @@ public final class VersionControlClient implements Closable {
             final Changeset[] changesets = changesetsHolder.get();
             if (changesets != null && changesets.length > 0) {
                 for (int i = 0; i < changesets.length; i++) {
-                    changesetIDToChangesetMap.put(new Integer(changesets[i].getChangesetID()), changesets[i]);
+                    changesetIDToChangesetMap.put(Integer.valueOf(changesets[i].getChangesetID()), changesets[i]);
                 }
             }
 
             for (int i = 0; i < merges.length; i++) {
-                merges[i].setTargetChangeset(changesetIDToChangesetMap.get(new Integer(merges[i].getTargetVersion())));
+                merges[i].setTargetChangeset(changesetIDToChangesetMap.get(Integer.valueOf(merges[i].getTargetVersion())));
             }
         }
 

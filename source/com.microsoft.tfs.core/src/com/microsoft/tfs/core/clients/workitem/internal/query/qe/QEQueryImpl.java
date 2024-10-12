@@ -286,7 +286,7 @@ public class QEQueryImpl implements QEQuery {
 
         if (message != null) {
             return MessageFormat.format(message, new Object[] {
-                new Integer(rowIx + 1).toString()
+                Integer.valueOf(rowIx + 1).toString()
             });
         }
 

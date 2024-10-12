@@ -623,7 +623,7 @@ public class Metadata implements IMetadata, IMetadataUpdateHandler {
                             @Override
                             public void handleRow(final ResultSet rset) throws SQLException {
                                 final int constId = rset.getInt(1);
-                                distinctConstantSetIds.add(new Integer(constId));
+                                distinctConstantSetIds.add(Integer.valueOf(constId));
                             }
                         });
                 }

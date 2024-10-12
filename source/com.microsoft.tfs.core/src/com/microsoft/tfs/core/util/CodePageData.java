@@ -81,7 +81,7 @@ class CodePageData {
      *         <code>null</code> if the code page is unknown
      */
     static String[] getCharsetNames(final int codePage) {
-        final Integer key = new Integer(codePage);
+        final Integer key = Integer.valueOf(codePage);
 
         synchronized (lock) {
             if (!initialized) {
@@ -170,7 +170,7 @@ class CodePageData {
                                     charsetNameToCodePage.get(name).toString(),
                                     Integer.toString(currentCodePage)));
                         } else {
-                            charsetNameToCodePage.put(name.toLowerCase(), new Integer(currentCodePage));
+                            charsetNameToCodePage.put(name.toLowerCase(), Integer.valueOf(currentCodePage));
                         }
                     }
                 }
@@ -181,7 +181,7 @@ class CodePageData {
         public void endElement(final String uri, final String localName, final String qName) throws SAXException {
             if ("codePage".equals(qName) && currentCodePage != -1) //$NON-NLS-1$
             {
-                final Integer codePageKey = new Integer(currentCodePage);
+                final Integer codePageKey = Integer.valueOf(currentCodePage);
                 if (codePageToCharsetNames.containsKey(codePageKey)) {
                     log.warn(MessageFormat.format(
                         "code page [{0}] is duplicated in the mappings", //$NON-NLS-1$

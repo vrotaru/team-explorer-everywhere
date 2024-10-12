@@ -29,7 +29,7 @@ public final class PlatformVersion {
     /*
      * Integer zero to compare with
      */
-    private static final Integer INTEGER_ZERO = new Integer(0);
+    private static final Integer INTEGER_ZERO = Integer.valueOf(0);
 
     /**
      * Determines if the given version number is equal to the operating system
@@ -163,7 +163,7 @@ public final class PlatformVersion {
 
             if (match.find()) {
                 try {
-                    versionComponents.add(new Integer(stringComponents[i].substring(match.start(), match.end())));
+                    versionComponents.add(Integer.valueOf(stringComponents[i].substring(match.start(), match.end())));
                 } catch (final Exception e) {
                     logger.warn("Could not coerce version number into format: " + versionString, e); //$NON-NLS-1$
                     break;

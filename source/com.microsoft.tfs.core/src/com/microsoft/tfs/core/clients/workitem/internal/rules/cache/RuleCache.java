@@ -70,7 +70,7 @@ public class RuleCache implements IRuleCache {
     }
 
     private synchronized RuleCacheNode getCacheNode(final int areaId) {
-        final Integer key = new Integer(areaId);
+        final Integer key = Integer.valueOf(areaId);
 
         RuleCacheNode node = idToCacheNode.get(key);
         if (node == null) {
@@ -156,7 +156,7 @@ public class RuleCache implements IRuleCache {
             if (delegateToParent) {
                 return parent.getRulesForChangedFieldID(changedFieldId);
             } else {
-                final Integer key = new Integer(changedFieldId);
+                final Integer key = Integer.valueOf(changedFieldId);
                 if (!changedFieldIdToRuleCacheResults.containsKey(key)) {
                     final List<Rule> affectedRules = getAffectedRules(changedFieldId);
                     final Set<Integer> affectedFields = getAffectedFields(affectedRules);
@@ -195,7 +195,7 @@ public class RuleCache implements IRuleCache {
             final Set<Integer> affectedFields,
             final int changedFieldId) {
             for (final Rule rule : sourceRules) {
-                final Integer thenFldId = new Integer(rule.getThenFldID());
+                final Integer thenFldId = Integer.valueOf(rule.getThenFldID());
                 if (affectedFields.contains(thenFldId)) {
                     if (!(rule.getThenFldID() == changedFieldId && rule.isFlagDefault())) {
                         /*
@@ -213,7 +213,7 @@ public class RuleCache implements IRuleCache {
             final Set<Integer> affectedFields = new HashSet<Integer>();
 
             for (final Rule rule : affectedRules) {
-                affectedFields.add(new Integer(rule.getThenFldID()));
+                affectedFields.add(Integer.valueOf(rule.getThenFldID()));
             }
 
             return affectedFields;
@@ -285,10 +285,10 @@ public class RuleCache implements IRuleCache {
                 for (int i = 0; i < areaNodeRules.length; i++) {
                     if (areaNodeRules[i].isFlagDefault()) {
                         allNodeRules.defaultRules.add(areaNodeRules[i]);
-                        allNodeRules.affectedFieldIds.add(new Integer(areaNodeRules[i].getThenFldID()));
+                        allNodeRules.affectedFieldIds.add(Integer.valueOf(areaNodeRules[i].getThenFldID()));
                     } else {
                         allNodeRules.nonDefaultRules.add(areaNodeRules[i]);
-                        allNodeRules.affectedFieldIds.add(new Integer(areaNodeRules[i].getThenFldID()));
+                        allNodeRules.affectedFieldIds.add(Integer.valueOf(areaNodeRules[i].getThenFldID()));
                     }
                 }
 
@@ -298,14 +298,14 @@ public class RuleCache implements IRuleCache {
                     for (final Rule rule : parentRules.defaultRules) {
                         if (rule.isFlagFlowdownTree()) {
                             allNodeRules.defaultRules.add(rule);
-                            allNodeRules.affectedFieldIds.add(new Integer(rule.getThenFldID()));
+                            allNodeRules.affectedFieldIds.add(Integer.valueOf(rule.getThenFldID()));
                         }
                     }
 
                     for (final Rule rule : parentRules.nonDefaultRules) {
                         if (rule.isFlagFlowdownTree()) {
                             allNodeRules.nonDefaultRules.add(rule);
-                            allNodeRules.affectedFieldIds.add(new Integer(rule.getThenFldID()));
+                            allNodeRules.affectedFieldIds.add(Integer.valueOf(rule.getThenFldID()));
                         }
                     }
                 }
@@ -319,7 +319,7 @@ public class RuleCache implements IRuleCache {
                  * ACL rules do not reference a thenfldid (thenfldid == 0), and
                  * we don't want the id 0 to appear in the affected field id set
                  */
-                allNodeRules.affectedFieldIds.remove(new Integer(0));
+                allNodeRules.affectedFieldIds.remove(Integer.valueOf(0));
             }
         }
 

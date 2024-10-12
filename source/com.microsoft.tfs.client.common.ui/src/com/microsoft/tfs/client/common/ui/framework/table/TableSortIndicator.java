@@ -34,7 +34,7 @@ public class TableSortIndicator {
                 {
                     Integer.TYPE
                 }).invoke(table, new Object[] {
-                    new Integer(direction)
+                    Integer.valueOf(direction)
                 });
             }
 

@@ -92,7 +92,7 @@ public class PageResultsRowSetHandler implements RowSetParseHandler {
             workItem.getFieldsInternal().addOriginalFieldValueFromServer(fieldReferenceName, fieldValueAsString, true);
         }
 
-        workItems.put(new Integer(workItem.getFields().getID()), workItem);
+        workItems.put(Integer.valueOf(workItem.getFields().getID()), workItem);
     }
 
     @Override
@@ -104,6 +104,6 @@ public class PageResultsRowSetHandler implements RowSetParseHandler {
     }
 
     public WorkItemImpl getByID(final int id) {
-        return getByID(new Integer(id));
+        return getByID(Integer.valueOf(id));
     }
 }

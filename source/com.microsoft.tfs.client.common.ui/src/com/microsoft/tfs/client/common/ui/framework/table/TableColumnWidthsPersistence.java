@@ -205,7 +205,7 @@ public class TableColumnWidthsPersistence {
     public void addMapping(final String key, final int index) {
         Check.notNull(key, "key"); //$NON-NLS-1$
 
-        final Integer value = new Integer(index);
+        final Integer value = Integer.valueOf(index);
 
         if (mappings.containsValue(value)) {
             for (final Iterator it = mappings.keySet().iterator(); it.hasNext();) {

@@ -415,14 +415,14 @@ public final class CommandProperties extends Command {
                 final ItemProperties itemProperties = new ItemProperties(client);
 
                 itemProperties.setItem(items[j]);
-                itemIDToItemPropertiesMap.put(new Integer(items[j].getItemID()), itemProperties);
+                itemIDToItemPropertiesMap.put(Integer.valueOf(items[j].getItemID()), itemProperties);
             }
 
             for (int j = 0; j < extendedItems.length; j++) {
                 final ExtendedItem extendedItem = extendedItems[j];
 
-                if (itemIDToItemPropertiesMap.containsKey(new Integer(extendedItem.getItemID()))) {
-                    itemIDToItemPropertiesMap.get(new Integer(extendedItem.getItemID())).setExtendedItem(extendedItem);
+                if (itemIDToItemPropertiesMap.containsKey(Integer.valueOf(extendedItem.getItemID()))) {
+                    itemIDToItemPropertiesMap.get(Integer.valueOf(extendedItem.getItemID())).setExtendedItem(extendedItem);
                 } else {
                     /*
                      * Microsoft's comments:
@@ -447,7 +447,7 @@ public final class CommandProperties extends Command {
                     final ItemProperties itemProperties = new ItemProperties(client);
 
                     itemProperties.setExtendedItem(extendedItem);
-                    itemIDToItemPropertiesMap.put(new Integer(extendedItem.getItemID()), itemProperties);
+                    itemIDToItemPropertiesMap.put(Integer.valueOf(extendedItem.getItemID()), itemProperties);
                 }
             }
 

@@ -154,7 +154,7 @@ public class PolicyDefinition {
 
         Integer priority = definitionMemento.getInteger(PRIORITY_ATTRIBUTE_NAME);
         if (priority == null) {
-            priority = new Integer(0);
+            priority = Integer.valueOf(0);
         }
 
         Boolean enabled = definitionMemento.getBoolean(ENABLED_ATTRIBUTE_NAME);

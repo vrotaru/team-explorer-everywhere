@@ -55,7 +55,7 @@ public class ListenerCategory {
      *        be <code>null</code>)
      */
     public ListenerCategory(final int selector, final Class listenerInterface) {
-        this(new Integer(selector), listenerInterface);
+        this(Integer.valueOf(selector), listenerInterface);
     }
 
     /**

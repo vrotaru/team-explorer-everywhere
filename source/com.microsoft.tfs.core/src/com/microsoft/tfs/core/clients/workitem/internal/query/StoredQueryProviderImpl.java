@@ -79,7 +79,7 @@ public class StoredQueryProviderImpl {
          * bucket exists. If such a bucket does not exist we do not
          * automatically create it here.
          */
-        final StoredQueryBucket bucket = buckets.get(new Integer(storedQuery.getProjectID()));
+        final StoredQueryBucket bucket = buckets.get(Integer.valueOf(storedQuery.getProjectID()));
         if (bucket != null) {
             bucket.add(storedQuery);
 
@@ -114,7 +114,7 @@ public class StoredQueryProviderImpl {
          * bucket exists. If such a bucket does not exist we do not
          * automatically create it here.
          */
-        final StoredQueryBucket bucket = buckets.get(new Integer(storedQuery.getProjectID()));
+        final StoredQueryBucket bucket = buckets.get(Integer.valueOf(storedQuery.getProjectID()));
 
         if (bucket != null) {
             bucket.remove(storedQuery);
@@ -184,7 +184,7 @@ public class StoredQueryProviderImpl {
     }
 
     public StoredQueryBucket getQueryBucket(final int projectId) {
-        final Integer key = new Integer(projectId);
+        final Integer key = Integer.valueOf(projectId);
 
         if (buckets.containsKey(key)) {
             return buckets.get(key);
@@ -197,7 +197,7 @@ public class StoredQueryProviderImpl {
     }
 
     public void refresh(final int projectId) {
-        final StoredQueryBucket bucket = buckets.get(new Integer(projectId));
+        final StoredQueryBucket bucket = buckets.get(Integer.valueOf(projectId));
 
         if (bucket != null) {
             bucket.refresh();

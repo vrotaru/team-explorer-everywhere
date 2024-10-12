@@ -181,11 +181,11 @@ public class BuildsTableControl extends TableControl {
 
                 for (int i = 0; i < buildQualities.length; i++) {
                     if (buildQualities[i].equals(buildQuality)) {
-                        return new Integer(i);
+                        return Integer.valueOf(i);
                     }
                 }
 
-                return new Integer(0);
+                return Integer.valueOf(0);
             }
             return null;
         }

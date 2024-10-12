@@ -10,7 +10,7 @@ public class ConstantSetsTableImpl extends BaseMetadataDAO implements ConstantSe
     public int[] getConstantIDsForParentID(final int parentId) {
         return (int[]) getConnection().createStatement(
             "select ConstID from ConstantSets where ParentID = ?").executeQueryForPrimitiveArray( //$NON-NLS-1$
-                new Integer(parentId),
+                Integer.valueOf(parentId),
                 Integer.TYPE);
     }
 }

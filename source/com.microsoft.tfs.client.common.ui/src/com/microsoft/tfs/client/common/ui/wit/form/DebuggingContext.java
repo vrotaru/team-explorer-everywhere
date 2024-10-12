@@ -108,7 +108,7 @@ public class DebuggingContext {
         }
 
         composite.setBackground(display.getSystemColor(BG_COLORS[ix]));
-        composite.setData(KEY, new Integer(ix));
+        composite.setData(KEY, Integer.valueOf(ix));
 
         final StringBuffer sb = new StringBuffer();
         sb.append(getShortName(formElement));

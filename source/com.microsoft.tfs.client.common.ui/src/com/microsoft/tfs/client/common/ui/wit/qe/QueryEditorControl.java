@@ -959,7 +959,7 @@ public class QueryEditorControl extends Composite {
             parameters[0] = Integer.TYPE;
 
             final Object[] arguments = new Object[1];
-            arguments[0] = new Integer(width);
+            arguments[0] = Integer.valueOf(width);
 
             final Method m = sash.getClass().getMethod("setSashWidth", parameters); //$NON-NLS-1$
             m.invoke(sash, arguments);

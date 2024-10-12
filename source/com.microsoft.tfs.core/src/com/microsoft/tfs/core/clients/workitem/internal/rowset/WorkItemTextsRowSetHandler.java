@@ -29,7 +29,7 @@ public class WorkItemTextsRowSetHandler extends BaseGetWorkItemRowSetHandler {
 
     @Override
     protected void doHandleRow() {
-        final Integer fieldId = new Integer(getIntValue(GetWorkItemFieldNames.FIELD_ID));
+        final Integer fieldId = Integer.valueOf(getIntValue(GetWorkItemFieldNames.FIELD_ID));
         final Date dateAdded = getDateValue(GetWorkItemFieldNames.ADDED_DATE);
         String value = getStringValue(GetWorkItemFieldNames.WORDS);
 

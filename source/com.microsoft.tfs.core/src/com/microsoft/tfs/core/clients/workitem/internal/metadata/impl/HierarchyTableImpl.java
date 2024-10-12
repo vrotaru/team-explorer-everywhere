@@ -24,7 +24,7 @@ public class HierarchyTableImpl extends BaseMetadataDAO implements HierarchyTabl
         final NodeResultHandler resultHandler = new NodeResultHandler();
 
         getConnection().createStatement(SQL).executeQuery(new Object[] {
-            new Integer(parentId)
+            Integer.valueOf(parentId)
         }, resultHandler);
 
         return resultHandler.toArray();
@@ -50,7 +50,7 @@ public class HierarchyTableImpl extends BaseMetadataDAO implements HierarchyTabl
     public int getParentID(final int childId) {
         return getConnection().createStatement("select ParentID from Hierarchy where AreaID = ?").executeIntQuery( //$NON-NLS-1$
             new Object[] {
-                new Integer(childId)
+                Integer.valueOf(childId)
         }).intValue();
     }
 
@@ -60,7 +60,7 @@ public class HierarchyTableImpl extends BaseMetadataDAO implements HierarchyTabl
 
         getConnection().createStatement(NodeMetadata.SELECT_STRING + " where TypeId = ?").executeQuery(new Object[] //$NON-NLS-1$
         {
-            new Integer(typeId)
+            Integer.valueOf(typeId)
         }, resultHandler);
 
         return resultHandler.toArray();

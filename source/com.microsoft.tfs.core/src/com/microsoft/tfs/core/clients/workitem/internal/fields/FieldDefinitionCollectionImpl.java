@@ -143,7 +143,7 @@ public class FieldDefinitionCollectionImpl implements FieldDefinitionCollection 
             final int[] workItemFieldIds =
                 context.getMetadata().getWorkItemTypeUsagesTable().getFieldIDsForWorkItemType(scopeType.getID());
             for (int i = 0; i < workItemFieldIds.length; i++) {
-                scopeTypeFieldIds.add(new Integer(workItemFieldIds[i]));
+                scopeTypeFieldIds.add(Integer.valueOf(workItemFieldIds[i]));
             }
         }
 
@@ -177,7 +177,7 @@ public class FieldDefinitionCollectionImpl implements FieldDefinitionCollection 
 
             if (scopeType != null) {
                 if (!fieldUsage.isCore()) {
-                    if (!scopeTypeFieldIds.contains(new Integer(fieldUsage.getFieldID()))) {
+                    if (!scopeTypeFieldIds.contains(Integer.valueOf(fieldUsage.getFieldID()))) {
                         continue;
                     }
                 }

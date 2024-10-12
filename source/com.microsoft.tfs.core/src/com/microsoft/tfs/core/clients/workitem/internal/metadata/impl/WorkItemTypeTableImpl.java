@@ -21,7 +21,7 @@ public class WorkItemTypeTableImpl extends BaseMetadataDAO implements WorkItemTy
             + "ProjectID = ? and fDeleted = 0"; //$NON-NLS-1$
 
         getConnection().createStatement(sql).executeQuery(new Object[] {
-            new Integer(projectId)
+            Integer.valueOf(projectId)
         }, new ResultHandler() {
             @Override
             public void handleRow(final ResultSet rset) throws SQLException {

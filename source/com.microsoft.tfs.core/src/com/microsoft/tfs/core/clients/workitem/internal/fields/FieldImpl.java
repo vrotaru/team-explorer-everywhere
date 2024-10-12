@@ -395,7 +395,7 @@ public class FieldImpl implements Field, IRuleTargetField {
                 }
                 final FieldImpl targetField = fieldCollection.getFieldInternal(
                     (id == WorkItemFieldIDs.AREA_PATH ? WorkItemFieldIDs.AREA_ID : WorkItemFieldIDs.ITERATION_ID));
-                targetField.setValue(source, new Integer(resolvedId));
+                targetField.setValue(source, Integer.valueOf(resolvedId));
 
                 if (fieldStatus == FieldStatus.INVALID_PATH) {
                     fieldStatus = FieldStatus.VALID;
@@ -790,7 +790,7 @@ public class FieldImpl implements Field, IRuleTargetField {
 
     private Integer getAttachmentCount(final boolean oldCount) {
         final int count = workItem.getAttachmentsInternal().getCount(null, oldCount);
-        return new Integer(count);
+        return Integer.valueOf(count);
     }
 
     private Integer getLinkCount(final boolean oldCount) {
@@ -805,7 +805,7 @@ public class FieldImpl implements Field, IRuleTargetField {
             type = RelatedLink.class;
         }
         final int count = workItem.getLinksInternal().getCount(type, oldCount);
-        return new Integer(count);
+        return Integer.valueOf(count);
     }
 
     public void fireFieldChangeListeners() {

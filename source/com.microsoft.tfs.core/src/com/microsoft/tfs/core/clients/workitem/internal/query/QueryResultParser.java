@@ -32,11 +32,11 @@ public class QueryResultParser {
             final int id = Integer.parseInt(sAtt);
 
             if (eAtt == null || eAtt.length() == 0) {
-                ids.add(new Integer(id));
+                ids.add(Integer.valueOf(id));
             } else {
                 final int endIx = Integer.parseInt(eAtt);
                 for (int curIx = id; curIx <= endIx; curIx++) {
-                    ids.add(new Integer(curIx));
+                    ids.add(Integer.valueOf(curIx));
                 }
             }
         }

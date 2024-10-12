@@ -58,7 +58,7 @@ public class PropertyHolder {
      *        the property value
      */
     public void addProperty(final String displayName, final String description, final Object value) {
-        final Object id = new Integer(nextId++);
+        final Object id = Integer.valueOf(nextId++);
 
         propertyValues.put(id, value);
 

@@ -36,7 +36,7 @@ public final class ChangesetVersionSpec extends VersionSpec {
     @Override
     public String toString() {
         // Returns something like "C2984".
-        return IDENTIFIER + new Integer(getChangeset()).toString();
+        return IDENTIFIER + Integer.valueOf(getChangeset()).toString();
     }
 
     public int getChangeset() {

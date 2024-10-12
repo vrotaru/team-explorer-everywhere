@@ -17,7 +17,7 @@ public class AdvisoryFileLockTest extends TestCase {
         }
 
         public synchronized void report(final int score) {
-            this.scores.add(new Integer(score));
+            this.scores.add(Integer.valueOf(score));
         }
 
         public synchronized void validate() throws IllegalStateException {

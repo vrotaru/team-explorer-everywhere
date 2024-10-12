@@ -49,7 +49,7 @@ public class PreferenceLinkAreaHelper {
 
             final Object preferenceLinkArea = preferenceLinkCtor.newInstance(new Object[] {
                 parent,
-                new Integer(style),
+                Integer.valueOf(style),
                 pageId,
                 message,
                 container,

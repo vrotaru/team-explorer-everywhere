@@ -71,9 +71,9 @@ public abstract class ComboBoxCellEditorHelper {
             }
 
             if (foundIx >= 0) {
-                return new Integer(foundIx);
+                return Integer.valueOf(foundIx);
             } else {
-                return new Integer(0);
+                return Integer.valueOf(0);
             }
         }
 

@@ -17,7 +17,7 @@ public class ActionsTableImpl extends BaseMetadataDAO implements ActionsTable {
 
         final Integer toStateId = getConnection().createStatement(sql).executeIntQuery(new Object[] {
             action,
-            new Integer(workItemTypeID),
+            Integer.valueOf(workItemTypeID),
             currentStateId
         });
 

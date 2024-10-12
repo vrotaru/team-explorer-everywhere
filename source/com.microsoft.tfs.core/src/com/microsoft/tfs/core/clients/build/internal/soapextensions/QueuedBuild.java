@@ -711,7 +711,7 @@ public class QueuedBuild extends WebServiceObjectWrapper implements IQueuedBuild
             // Sort special QueuePositions: Canceled = -2, Complete = -1,
             // InProgress = 0 The position is determined on the server by
             // looking at Queue, status, priority
-            result = new Integer(getQueuePosition()).compareTo(build.getQueuePosition());
+            result = Integer.valueOf(getQueuePosition()).compareTo(build.getQueuePosition());
         }
 
         // Re-sort completed builds by FinishTime.
@@ -724,7 +724,7 @@ public class QueuedBuild extends WebServiceObjectWrapper implements IQueuedBuild
 
             // The last sort is by Id so we get a deterministic sort order
             if (result == 0) {
-                result = new Integer(getID()).compareTo(build.getID());
+                result = Integer.valueOf(getID()).compareTo(build.getID());
             }
         }
 

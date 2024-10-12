@@ -713,7 +713,7 @@ public class _BuildDetail
 
                         if (event0 == XMLStreamConstants.START_ELEMENT)
                         {
-                            list0.add(new Integer(XMLConvert.toInt(reader.getElementText())));
+                            list0.add(Integer.valueOf(XMLConvert.toInt(reader.getElementText())));
                         }
                     }
                     while (event0 != XMLStreamConstants.END_ELEMENT);

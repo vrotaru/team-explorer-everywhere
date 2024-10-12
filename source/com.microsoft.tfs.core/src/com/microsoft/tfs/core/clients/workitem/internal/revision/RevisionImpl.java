@@ -81,7 +81,7 @@ public class RevisionImpl implements Revision {
 
     @Override
     public RevisionField getField(final int id) {
-        final Object key = new Integer(id);
+        final Object key = Integer.valueOf(id);
         return fieldsById.get(key);
     }
 
@@ -165,7 +165,7 @@ public class RevisionImpl implements Revision {
     public void addField(final RevisionFieldImpl field) {
         revisionFields.add(field);
         fieldsByReferenceName.put(field.getFieldDefinition().getReferenceName(), field);
-        fieldsById.put(new Integer(field.getFieldDefinition().getID()), field);
+        fieldsById.put(Integer.valueOf(field.getFieldDefinition().getID()), field);
     }
 
     public RevisionImpl createCopyForPreviousRevision() {
@@ -184,7 +184,7 @@ public class RevisionImpl implements Revision {
     }
 
     public RevisionFieldImpl getFieldInternal(final int id) {
-        return fieldsById.get(new Integer(id));
+        return fieldsById.get(Integer.valueOf(id));
     }
 
     public void convertToInitialRevision() {

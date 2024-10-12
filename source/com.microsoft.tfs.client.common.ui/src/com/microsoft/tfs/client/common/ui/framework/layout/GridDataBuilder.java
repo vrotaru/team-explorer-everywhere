@@ -316,7 +316,7 @@ public class GridDataBuilder {
             final Field field = gridData.getClass().getField("minimumWidth"); //$NON-NLS-1$
 
             if (field != null) {
-                field.set(gridData, new Integer(width));
+                field.set(gridData, Integer.valueOf(width));
             }
         } catch (final Exception e) {
             /* Suppress, not available in many versions of Eclipse */
@@ -330,7 +330,7 @@ public class GridDataBuilder {
             final Field field = gridData.getClass().getField("minimumHeight"); //$NON-NLS-1$
 
             if (field != null) {
-                field.set(gridData, new Integer(height));
+                field.set(gridData, Integer.valueOf(height));
             }
         } catch (final Exception e) {
             /* Suppress, not available in many versions of Eclipse */

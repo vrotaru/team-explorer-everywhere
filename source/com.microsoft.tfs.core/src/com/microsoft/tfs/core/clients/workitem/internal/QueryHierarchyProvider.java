@@ -25,7 +25,7 @@ public class QueryHierarchyProvider {
 
     public QueryHierarchy getQueryHierarchy(final Project project) {
         synchronized (lock) {
-            final Integer projectIdKey = new Integer(project.getID());
+            final Integer projectIdKey = Integer.valueOf(project.getID());
             QueryHierarchy hierarchy = projectQueryHierarchies.get(projectIdKey);
 
             if (hierarchy == null) {

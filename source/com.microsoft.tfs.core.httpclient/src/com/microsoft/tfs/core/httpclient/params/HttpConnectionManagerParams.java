@@ -120,7 +120,7 @@ public class HttpConnectionManagerParams extends HttpConnectionParams {
         } else {
             newValues = new HashMap(currentValues);
         }
-        newValues.put(hostConfiguration, new Integer(maxHostConnections));
+        newValues.put(hostConfiguration, Integer.valueOf(maxHostConnections));
         setParameter(MAX_HOST_CONNECTIONS, newValues);
     }
 

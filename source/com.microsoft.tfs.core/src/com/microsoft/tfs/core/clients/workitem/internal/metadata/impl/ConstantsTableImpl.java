@@ -47,7 +47,7 @@ public class ConstantsTableImpl extends BaseMetadataDAO implements ConstantsTabl
     @Override
     public String getConstantByID(final int id) {
         final Object[] results = getConnection().createStatement(
-            "select String, DisplayName from Constants where ConstID = ?").executeMultiColumnQuery(new Integer(id)); //$NON-NLS-1$
+            "select String, DisplayName from Constants where ConstID = ?").executeMultiColumnQuery(Integer.valueOf(id)); //$NON-NLS-1$
 
         if (results == null) {
             throw new LookupFailedException(
@@ -83,7 +83,7 @@ public class ConstantsTableImpl extends BaseMetadataDAO implements ConstantsTabl
         getConnection().createStatement(sql).executeQuery(new Object[] {}, new ResultHandler() {
             @Override
             public void handleRow(final ResultSet rset) throws SQLException {
-                set.add(new Integer(rset.getInt(1)));
+                set.add(Integer.valueOf(rset.getInt(1)));
             }
         });
 

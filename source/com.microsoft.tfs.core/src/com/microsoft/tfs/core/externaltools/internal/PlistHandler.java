@@ -123,7 +123,7 @@ public class PlistHandler extends DefaultHandler {
                     add(data);
                 } else if (qualifiedName.equals("integer")) //$NON-NLS-1$
                 {
-                    add(new Integer(Integer.parseInt(data)));
+                    add(Integer.valueOf(Integer.parseInt(data)));
                 } else if (qualifiedName.equals("real")) //$NON-NLS-1$
                 {
                     add(new Float(Float.parseFloat(data)));

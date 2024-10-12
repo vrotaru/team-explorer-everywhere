@@ -24,19 +24,19 @@ public class WorkItemLinkTypeEndCollectionImpl implements WorkItemLinkTypeEndCol
             final WorkItemLinkType linkType = linkTypes[i];
             mapByName.put(linkType.getForwardEnd().getImmutableName(), linkType.getForwardEnd());
             mapByName.put(linkType.getForwardEnd().getName(), linkType.getForwardEnd());
-            mapById.put(new Integer(linkType.getForwardEnd().getID()), linkType.getForwardEnd());
+            mapById.put(Integer.valueOf(linkType.getForwardEnd().getID()), linkType.getForwardEnd());
 
             if (linkType.isDirectional()) {
                 mapByName.put(linkType.getReverseEnd().getImmutableName(), linkType.getReverseEnd());
                 mapByName.put(linkType.getReverseEnd().getName(), linkType.getReverseEnd());
-                mapById.put(new Integer(linkType.getReverseEnd().getID()), linkType.getReverseEnd());
+                mapById.put(Integer.valueOf(linkType.getReverseEnd().getID()), linkType.getReverseEnd());
             }
         }
     }
 
     @Override
     public boolean contains(final int id) {
-        return mapById.containsKey(new Integer(id));
+        return mapById.containsKey(Integer.valueOf(id));
     }
 
     @Override
@@ -51,7 +51,7 @@ public class WorkItemLinkTypeEndCollectionImpl implements WorkItemLinkTypeEndCol
 
     @Override
     public WorkItemLinkTypeEnd getByID(final int id) {
-        return mapById.get(new Integer(id));
+        return mapById.get(Integer.valueOf(id));
     }
 
     @Override

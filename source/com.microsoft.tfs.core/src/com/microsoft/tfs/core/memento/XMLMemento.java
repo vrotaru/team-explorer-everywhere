@@ -393,7 +393,7 @@ public class XMLMemento implements Memento {
         }
 
         try {
-            return new Integer(value);
+            return Integer.valueOf(value);
         } catch (final NumberFormatException e) {
             log.warn(MessageFormat.format("Invalid integer for key: {0} value: {1}", key, value), e); //$NON-NLS-1$
             return null;

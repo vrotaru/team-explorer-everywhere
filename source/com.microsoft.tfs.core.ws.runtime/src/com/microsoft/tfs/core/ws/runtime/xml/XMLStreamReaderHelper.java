@@ -142,7 +142,7 @@ public abstract class XMLStreamReaderHelper {
                 return new Float(XMLConvert.toFloat(reader.getElementText()));
             } else if (typeString.equals("int")) //$NON-NLS-1$
             {
-                return new Integer(XMLConvert.toInt(reader.getElementText()));
+                return Integer.valueOf(XMLConvert.toInt(reader.getElementText()));
             } else if (typeString.equals("guid")) //$NON-NLS-1$
             {
                 return XMLConvert.toGUID(reader.getElementText());

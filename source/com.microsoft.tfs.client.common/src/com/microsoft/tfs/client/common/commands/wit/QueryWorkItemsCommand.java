@@ -89,8 +89,8 @@ public class QueryWorkItemsCommand extends TFSConnectedCommand {
         final Set idSet = new HashSet();
         final List idList = new ArrayList();
         for (int i = 0; i < links.length; i++) {
-            final Integer sourceId = new Integer(links[i].getSourceID());
-            final Integer targetId = new Integer(links[i].getTargetID());
+            final Integer sourceId = Integer.valueOf(links[i].getSourceID());
+            final Integer targetId = Integer.valueOf(links[i].getTargetID());
 
             if (sourceId.intValue() != 0 && !idSet.contains(sourceId)) {
                 idSet.add(sourceId);

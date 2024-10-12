@@ -154,7 +154,7 @@ public abstract class MessagesTestCase extends TestCase {
             {
                 final int parameterCount = getParameterCount(property);
                 if (parameterCount > 0) {
-                    mapParameterCount.put(property.name, new Integer(parameterCount));
+                    mapParameterCount.put(property.name, Integer.valueOf(parameterCount));
 
                     final boolean isFormat = property.name.endsWith("Format") || property.name.endsWith("FormatNOLOC"); //$NON-NLS-1$ //$NON-NLS-2$
                     assertTrue("Expected name '" + property.name + "' to end in 'Format'", isFormat); //$NON-NLS-1$ //$NON-NLS-2$
@@ -194,7 +194,7 @@ public abstract class MessagesTestCase extends TestCase {
                     final Integer other = mapArgumentsPassed.get(name);
                     assertEquals("Argument mismatch for id=" + name, argumentInfo.argCount, other.intValue()); //$NON-NLS-1$
                 } else {
-                    mapArgumentsPassed.put(name, new Integer(argumentInfo.argCount));
+                    mapArgumentsPassed.put(name, Integer.valueOf(argumentInfo.argCount));
                 }
             }
         }

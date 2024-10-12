@@ -283,7 +283,7 @@ public class WorkItemControl extends Composite {
 
         for (int i = 0; i < originalWorkItems.length; i++) {
             final WorkItem workItem = (WorkItem) idToWorkItemsInEditors.get(
-                new Integer(originalWorkItems[i].getWorkItem().getFields().getID()));
+                Integer.valueOf(originalWorkItems[i].getWorkItem().getFields().getID()));
 
             if (workItem != null) {
                 newWorkItems[i] = new WorkItemCheckinInfo(workItem, originalWorkItems[i].getAction());

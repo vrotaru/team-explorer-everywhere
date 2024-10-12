@@ -19,7 +19,7 @@ public class FieldUsagesTableImpl extends BaseMetadataDAO implements FieldUsages
         final String selectString = FieldUsageMetadata.getSelectStatement(getConnection());
 
         getConnection().createStatement(selectString + " where ObjectID = ?").executeQuery( //$NON-NLS-1$
-            new Integer(objectId),
+            Integer.valueOf(objectId),
             new ResultHandler() {
                 @Override
                 public void handleRow(final ResultSet rset) throws SQLException {

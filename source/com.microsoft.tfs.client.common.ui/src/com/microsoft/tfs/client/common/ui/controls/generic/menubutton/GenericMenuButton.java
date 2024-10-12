@@ -192,7 +192,7 @@ public class GenericMenuButton extends MenuButton {
         public void keyTraversed(final TraverseEvent e) {
             if (e.widget == button && (e.detail == SWT.TRAVERSE_RETURN || e.keyCode == ' ')) {
                 final Event selectionEvent = new Event();
-                selectionEvent.data = new Integer(SWT.Selection);
+                selectionEvent.data = Integer.valueOf(SWT.Selection);
                 notifyListeners(SWT.Selection, selectionEvent);
 
                 e.doit = false;
@@ -255,13 +255,13 @@ public class GenericMenuButton extends MenuButton {
 
             /* On the button side of the button */
             if (mouseDown == upLocation && upLocation == BUTTON) {
-                selectionEvent.data = new Integer(SWT.Selection);
+                selectionEvent.data = Integer.valueOf(SWT.Selection);
                 notifyListeners(SWT.Selection, selectionEvent);
             }
 
             /* On the disclosure triangle side of the button */
             else if (mouseDown == upLocation && upLocation == DISCLOSURE) {
-                selectionEvent.data = new Integer(SWT.Expand);
+                selectionEvent.data = Integer.valueOf(SWT.Expand);
                 openMenu();
             }
 

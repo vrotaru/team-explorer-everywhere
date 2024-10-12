@@ -77,13 +77,13 @@ public class FieldReferenceBasedCache<T> {
             referenceNamesCaseSensitive.put(createKey(referenceName, true), object);
             displayNames.put(createKey(displayName, false), object);
             displayNamesCaseSensitive.put(createKey(displayName, true), object);
-            ids.put(new Integer(id), object);
+            ids.put(Integer.valueOf(id), object);
             valueSet.add(object);
         }
     }
 
     public T get(final int id) {
-        final Integer key = new Integer(id);
+        final Integer key = Integer.valueOf(id);
         synchronized (lock) {
             return ids.get(key);
         }

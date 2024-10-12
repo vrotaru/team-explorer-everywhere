@@ -43,7 +43,7 @@ public abstract class BaseRowSetHandler implements RowSetParseHandler {
 
     @Override
     public void handleColumn(final String name, final String type) {
-        columnNamesToIndexes.put(name, new Integer(currentColumnIndex));
+        columnNamesToIndexes.put(name, Integer.valueOf(currentColumnIndex));
         ++currentColumnIndex;
     }
 

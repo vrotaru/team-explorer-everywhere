@@ -10,7 +10,7 @@ public class WorkItemTypeUsagesTableImpl extends BaseMetadataDAO implements Work
     public int[] getFieldIDsForWorkItemType(final int workItemTypeId) {
         return (int[]) getConnection().createStatement(
             "select FieldID from WorkItemTypeUsages where WorkItemTypeID = ?").executeQueryForPrimitiveArray( //$NON-NLS-1$
-                new Integer(workItemTypeId),
+                Integer.valueOf(workItemTypeId),
                 Integer.TYPE);
     }
 }

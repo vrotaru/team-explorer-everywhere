@@ -770,7 +770,7 @@ public class WorkItemPickerDialog extends BaseDialog {
             final String message =
                 MessageFormat.format(Messages.getString("WorkItemPickerDialog.ResultsLabelText"), new Object[] //$NON-NLS-1$
             {
-                new Integer(results.getCount())
+                Integer.valueOf(results.getCount())
             });
             resultsLabel.setText(message);
             filterLabel.setVisible(true);

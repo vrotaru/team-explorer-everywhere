@@ -163,7 +163,7 @@ public class RuleEngine {
 
         // Return true if the list of affected fields IDS included the original
         // changed field.
-        return affectedFieldIDs.contains(new Integer(changedFieldId));
+        return affectedFieldIDs.contains(Integer.valueOf(changedFieldId));
     }
 
     private void fieldChanged(final int changedFieldId, final int recursive, final Set<Integer> allAffectedFieldIDs) {
@@ -282,7 +282,7 @@ public class RuleEngine {
             return;
         }
 
-        final Integer setValueOperationkey = new Integer(thenFldID);
+        final Integer setValueOperationkey = Integer.valueOf(thenFldID);
         final String traceOutput = MessageFormat.format(
             "applying VP rule [{0}] in area [{1}] to field [{2}]: ", //$NON-NLS-1$
             Integer.toString(rule.getRuleID()),
@@ -980,7 +980,7 @@ public class RuleEngine {
             // If so, use the new field value
             //
             Object fieldValue = field.getValue();
-            final Integer setValueOperationsId = new Integer(fieldId);
+            final Integer setValueOperationsId = Integer.valueOf(fieldId);
             if (setValueOperations.containsKey(setValueOperationsId)) {
                 fieldValue = setValueOperations.get(setValueOperationsId);
             }

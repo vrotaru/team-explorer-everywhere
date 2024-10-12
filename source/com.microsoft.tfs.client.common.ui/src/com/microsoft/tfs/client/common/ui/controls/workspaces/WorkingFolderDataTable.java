@@ -411,7 +411,7 @@ public class WorkingFolderDataTable extends TableControl {
     protected Object getValueToModify(final Object element, final String columnPropertyName) {
         if (LAST_ROW_PLACEHOLDER == element) {
             if (COLUMN_TYPE.equals(columnPropertyName)) {
-                return new Integer(-1);
+                return Integer.valueOf(-1);
             }
         } else {
             final WorkingFolderData workingFolder = (WorkingFolderData) element;
@@ -419,10 +419,10 @@ public class WorkingFolderDataTable extends TableControl {
             if (COLUMN_TYPE.equals(columnPropertyName)) {
                 if (workingFolder.isCloak()) {
                     // index of "Cloaked" in the ComboBoxCellEditor's values
-                    return new Integer(1);
+                    return Integer.valueOf(1);
                 } else {
                     // index of "Active" in the ComboBoxCellEditor's values
-                    return new Integer(0);
+                    return Integer.valueOf(0);
                 }
             }
             if (COLUMN_SERVER.equals(columnPropertyName)) {

@@ -45,7 +45,7 @@ public class PendingCheckinSaveableFilter implements WorkbenchPartSaveableFilter
             if (infos != null) {
                 for (int i = 0; i < infos.length; i++) {
                     final WorkItemCheckinInfo info = infos[i];
-                    mapWorkItemIds.add(new Integer(info.getWorkItem().getID()));
+                    mapWorkItemIds.add(Integer.valueOf(info.getWorkItem().getID()));
                 }
             }
         }
@@ -79,7 +79,7 @@ public class PendingCheckinSaveableFilter implements WorkbenchPartSaveableFilter
 
                 if (input != null && input.getWorkItem() != null) {
                     final int workItemId = input.getWorkItem().getID();
-                    if (mapWorkItemIds.contains(new Integer(workItemId))) {
+                    if (mapWorkItemIds.contains(Integer.valueOf(workItemId))) {
                         return true;
                     }
                 }

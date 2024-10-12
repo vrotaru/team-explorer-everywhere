@@ -41,7 +41,7 @@ public class RulePersonScopeCache {
     }
 
     public synchronized boolean isRuleInScope(final int personID, final boolean inversePerson) {
-        final Integer key = new Integer(personID);
+        final Integer key = Integer.valueOf(personID);
         Boolean matches = personIds.get(key);
         if (matches == null) {
             matches = Boolean.valueOf(currentUserMatches(personID));

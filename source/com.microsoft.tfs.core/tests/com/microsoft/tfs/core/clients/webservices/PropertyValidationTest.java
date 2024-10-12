@@ -89,7 +89,7 @@ public class PropertyValidationTest extends TestCase {
 
     public void testValidatePropertyValue_Integer() {
         PropertyValidation.validatePropertyValue("a", 0); //$NON-NLS-1$
-        PropertyValidation.validatePropertyValue("a", new Integer(1)); //$NON-NLS-1$
+        PropertyValidation.validatePropertyValue("a", Integer.valueOf(1)); //$NON-NLS-1$
     }
 
     public void testValidatePropertyValue_Double() {

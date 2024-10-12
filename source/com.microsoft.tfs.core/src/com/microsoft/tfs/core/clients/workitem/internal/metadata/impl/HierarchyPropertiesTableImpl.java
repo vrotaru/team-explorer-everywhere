@@ -11,7 +11,7 @@ public class HierarchyPropertiesTableImpl extends BaseMetadataDAO implements Hie
         return getConnection().createStatement(
             "select Value from HierarchyProperties where PropID = ?").executeStringQuery( //$NON-NLS-1$
                 new Object[] {
-                    new Integer(propId)
+                    Integer.valueOf(propId)
         });
     }
 }

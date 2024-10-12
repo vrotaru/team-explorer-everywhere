@@ -47,7 +47,7 @@ public class GridLayoutMarginHelper {
     private static void setField(final Object obj, final String fieldName, final int value) {
         try {
             final Field field = obj.getClass().getField(fieldName);
-            field.set(obj, new Integer(value));
+            field.set(obj, Integer.valueOf(value));
         } catch (final Throwable t) {
             // ignore
         }

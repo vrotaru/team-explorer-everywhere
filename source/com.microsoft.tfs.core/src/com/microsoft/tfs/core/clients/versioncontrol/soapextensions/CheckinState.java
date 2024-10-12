@@ -42,7 +42,7 @@ public class CheckinState extends TypesafeEnum {
     private CheckinState(final int value) {
         super(value);
 
-        final Integer key = new Integer(value);
+        final Integer key = Integer.valueOf(value);
         Check.isTrue(VALUE_MAP.containsKey(key), "duplicate key"); //$NON-NLS-1$
         VALUE_MAP.put(key, this);
     }
@@ -56,7 +56,7 @@ public class CheckinState extends TypesafeEnum {
      *         <code>null</code> if none matched
      */
     public static CheckinState fromInteger(final int value) {
-        final Integer key = new Integer(value);
+        final Integer key = Integer.valueOf(value);
         Check.isTrue(VALUE_MAP.containsKey(key), "VALUE_MAP.containsKey(key)"); //$NON-NLS-1$
         return VALUE_MAP.get(key);
     }
