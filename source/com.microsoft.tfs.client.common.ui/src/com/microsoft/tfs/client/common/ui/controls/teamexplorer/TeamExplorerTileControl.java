@@ -211,18 +211,21 @@ public class TeamExplorerTileControl extends BaseControl {
     }
 
     public void setColorBar(final String navId) {
-        String colorHex = ColorTheme.stripColorMap.get(navId);
-        if (colorHex == null) {
-            colorHex = ColorTheme.OtherStripColor;
+        Image enabledColor = colorBar.getEnabledImage();
+        if (enabledColor == null) {
+            String colorHex = ColorTheme.stripColorMap.get(navId);
+            if (colorHex == null) {
+                colorHex = ColorTheme.OtherStripColor;
+            }
+            
+            Image enabledColorBar = ImageUtils.createRectangular(
+                composite,
+                ColorUtils.hexadecimalToColor(display, colorHex),
+                colorBarWidth,
+                colorBarHeight);
+
+            colorBar.setEnabledImage(enabledColorBar);
         }
-
-        final Image enabledColorBar = ImageUtils.createRectangular(
-            composite,
-            ColorUtils.hexadecimalToColor(display, colorHex),
-            colorBarWidth,
-            colorBarHeight);
-
-        colorBar.setEnabledImage(enabledColorBar);
         layout();
     }
 
